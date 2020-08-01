@@ -1,0 +1,35 @@
+.Correct{
+    text-align: center;
+    width: 50%;
+    margin: 2.5% 25% ;
+    font-size: 2.5rem;
+    background-color: green;
+}
+
+.Hot{
+    text-align: center;
+    width: 50%;
+    margin: 2.5% 25% ;
+    font-size: 2.5rem;
+    background-color: Red;
+}
+
+.Warm{
+    text-align: center;
+    width: 50%;
+    margin: 2.5% 25% ;
+    font-size: 2.5rem;
+    background-color: yellow;
+}
+
+.Cold{
+    text-align: center;
+    width: 50%;
+    margin: 2.5% 25% ;
+    font-size: 2.5rem;
+    background-color: blue;
+}
+
+hr{
+    border-top: 5px dashed black;
+}
