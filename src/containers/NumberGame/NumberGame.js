@@ -4,12 +4,18 @@ import classes from "./NumberGame.module.css";
 
 class NumberGame extends Component {
   state = {
+    randomNumber: 0,
     difference: [],
     visibility: "hidden",
     range: 100,
     inpArray: [{ text: "" }],
   };
 
+  componentDidMount() {
+    let range = this.state.range;
+    let randomNumber = Math.floor(Math.random() * range + 1);
+    this.setState({ randomNumber: randomNumber });
+  }
   inputChangeHandler = (event, index) => {
     let text = event.target.value;
     this.setState((prevState) => {
@@ -24,9 +30,10 @@ class NumberGame extends Component {
     const range = this.state.range;
     const num = +this.state.inpArray[index].text;
     let arr = [...this.state.inpArray];
-    let randomNumber = Math.floor(Math.random() * range + 1);
+    let randomNumber = this.state.randomNumber;
     let diff = Math.abs(randomNumber - num);
     if (diff === 0) {
+      randomNumber = Math.floor(Math.random() * range + 1);
       const obj = {
         text: "",
       };
@@ -34,6 +41,7 @@ class NumberGame extends Component {
         visibility: "visible",
         range: range + 100,
         inpArray: arr.concat(obj),
+        randomNumber: randomNumber,
       });
       this.setState((prevState) => {
         return {
