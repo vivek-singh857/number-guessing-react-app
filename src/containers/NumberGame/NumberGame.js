@@ -103,7 +103,7 @@ class NumberGame extends Component {
       }
     };
 
-    const input = this.state.inpArray.map((ele, index) => {
+    const data = this.state.inpArray.map((ele, index) => {
       return (
         <div key={index}>
           <Input
@@ -116,7 +116,7 @@ class NumberGame extends Component {
         </div>
       );
     });
-    return <div>{input}</div>;
+    return <div>{data}</div>;
   }
 }
 
